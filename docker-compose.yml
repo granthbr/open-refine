@@ -1,0 +1,14 @@
+data:
+  image: alpine:latest
+  volumes:
+    - /data
+  entrypoint: sh
+  
+openRefine:
+  hostname: open.refine
+  image: granthbr/open-refine
+  volumes_from:
+    - data
+  ports:
+    - 3333:3333
+	
