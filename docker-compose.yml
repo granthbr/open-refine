@@ -8,7 +8,16 @@ services:
     - or-data:/mnt/refine 
    ports:
     - "3333:3333"
+ virtuoso:
+   hostname: virtuso.rdf
+   image: granthbr/virtuoso_rdf
+   # build: ./virtuoso/.
+   volumes:
+    - vi-data:/opt/virtuso-opensource/var/lib/virtuoso/db/virtuoso.ini
+   ports:
+    - "1111:1111"
+    - "8890:8890"
 volumes:
  or-data:
-   external: true
+ vi-data:
 
